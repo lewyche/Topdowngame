@@ -52,11 +52,11 @@ position = Vector2( 547.284, 415.135 )
 position = Vector2( 380.429, 403.122 )
 
 [node name="new_enemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 99.0035, -242.335 )
+position = Vector2( 193.184, 1338.55 )
 health = 5
 
 [node name="new_enemy2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 433.135, -438.661 )
+position = Vector2( 465.477, 1273.04 )
 health = 5
 
 [node name="Item" parent="." instance=ExtResource( 6 )]
@@ -77,11 +77,17 @@ visible = false
 
 [node name="Pick up identifier" parent="CanvasLayer" instance=ExtResource( 11 )]
 
-[node name="shooting_enemy" parent="." instance=ExtResource( 12 )]
-position = Vector2( 137.206, 973.946 )
-
 [node name="shooting_enemy2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 874.514, 1019.14 )
 
-[node name="shooting_enemy3" parent="." instance=ExtResource( 12 )]
-position = Vector2( 841.227, -300.356 )
+[node name="Room2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3.1748, 882.595 )
+
+[node name="new_enemy3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 290.063, 1183.82 )
+
+[node name="new_enemy4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 666.784, 1237.64 )
+
+[node name="new_enemy5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 488.514, 1045.92 )

@@ -22,7 +22,6 @@ tracks/0/keys = {
 
 [node name="new_enemy" groups=[
 "Enemy",
-"Npcs",
 ] instance=ExtResource( 2 )]
 collision_layer = 24
 collision_mask = 15

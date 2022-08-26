@@ -25,7 +25,7 @@ func _ready():
 func check_collisions(collision_info):
 	var object = collision_info.get_collider()
 	
-	if object.is_in_group("Npcs"):
+	if object.is_in_group("Npcs") or object.is_in_group("Enemy"):
 		object.hit(power)
 		
 	velocity = velocity.bounce(collision_info.normal)

@@ -6,7 +6,6 @@
 
 [node name="shooting_enemy" groups=[
 "Enemy",
-"Npcs",
 ] instance=ExtResource( 1 )]
 collision_layer = 24
 collision_mask = 15
@@ -18,5 +17,4 @@ scale = Vector2( 0.932635, 1.07479 )
 texture = ExtResource( 3 )
 
 [node name="Shooting_cooldown" type="Timer" parent="." index="5"]
-wait_time = 0.7
 one_shot = true

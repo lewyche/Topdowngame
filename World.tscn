@@ -1,0 +1,87 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Characters/new_player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Characters/new_npc.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Props/Room.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/new_enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Items/Item.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Inventory.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/Game Over.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/CanvasLayer.gd" type="Script" id=9]
+[ext_resource path="res://UI/Health.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/Pick up identifier.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Characters/shooting_enemy.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 155.5, 29 )
+
+[node name="World" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 156.505, 137.418 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 126.982, 0 )
+scale = Vector2( 4.96817, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 127.5, -0.5 )
+scale = Vector2( 0.981409, 0.995279 )
+shape = SubResource( 1 )
+
+[node name="Room" parent="." instance=ExtResource( 4 )]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 517.398, 299.379 )
+collision_mask = 9
+
+[node name="Npc" parent="." instance=ExtResource( 3 )]
+position = Vector2( 317.692, 258.959 )
+
+[node name="Npc2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 248.389, 432.657 )
+
+[node name="Npc3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 547.284, 415.135 )
+
+[node name="Npc4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 380.429, 403.122 )
+
+[node name="new_enemy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 99.0035, -242.335 )
+health = 5
+
+[node name="new_enemy2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 433.135, -438.661 )
+health = 5
+
+[node name="Item" parent="." instance=ExtResource( 6 )]
+position = Vector2( 780.352, 218.633 )
+item_type = "Big Gun"
+is_weapon = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 9 )
+
+[node name="Game Over" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Health" parent="CanvasLayer" instance=ExtResource( 10 )]
+
+[node name="Pick up identifier" parent="CanvasLayer" instance=ExtResource( 11 )]
+
+[node name="shooting_enemy" parent="." instance=ExtResource( 12 )]
+position = Vector2( 137.206, 973.946 )
+
+[node name="shooting_enemy2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 874.514, 1019.14 )
+
+[node name="shooting_enemy3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 841.227, -300.356 )

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/new_enemy.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Enemy.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 0 ]
+}
+
+[node name="new_enemy" groups=[
+"Enemy",
+"Npcs",
+] instance=ExtResource( 2 )]
+collision_layer = 24
+collision_mask = 15
+script = ExtResource( 1 )
+speed = 500
+
+[node name="AnimationPlayer" parent="." index="0"]
+anims/Hit = SubResource( 1 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0.34402, -0.0156355 )
+scale = Vector2( 0.494731, 0.539257 )
+texture = ExtResource( 3 )
+hframes = 3
+
+[node name="Invincibility" parent="." index="3"]
+wait_time = 0.2

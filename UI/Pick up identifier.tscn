@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="Pick up identifier" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 538.0
+margin_top = 228.0
+margin_right = -403.0
+margin_bottom = -336.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Press E"
+__meta__ = {
+"_edit_use_anchors_": false
+}

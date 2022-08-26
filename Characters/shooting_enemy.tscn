@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Characters/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/shooting_enemy.gd" type="Script" id=2]
+[ext_resource path="res://Assets/shooting_enemy.png" type="Texture" id=3]
+
+[node name="shooting_enemy" groups=[
+"Enemy",
+"Npcs",
+] instance=ExtResource( 1 )]
+collision_layer = 24
+collision_mask = 15
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 2.19061, -0.353559 )
+scale = Vector2( 0.932635, 1.07479 )
+texture = ExtResource( 3 )
+
+[node name="Shooting_cooldown" type="Timer" parent="." index="5"]
+wait_time = 0.7
+one_shot = true
